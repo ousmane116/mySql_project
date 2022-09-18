@@ -1,3 +1,5 @@
+# creating my sql table with the name employees
+
 create table myproject.employees(
     emp_id int NOT NULL AUTO_INCREMENT,
     first_name varchar(255),
