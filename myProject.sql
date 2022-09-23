@@ -26,7 +26,7 @@ insert into myproject.employees (
         last_name,
         email_address,
         Gender,
-        education_,
+        education,
         job_type,
         over_time
         )
@@ -69,3 +69,39 @@ where last_name = 'bassoum';
  
  update myproject.employees
  set education = 'data analyst';
+ 
+ # this is order by table
+ 
+ select * from myproject.employees
+ order by emp_id desc;
+ 
+# how to create a delete,truncate and drop statement
+delete from myproject.employees 
+where job_type ='data analyst';
+# truncate
+truncate table myproject.employees;
+# drop
+drop table myproject.employees;
+
+# how to create a rollback start
+delete from myproject.employees
+where emp_id=2;
+
+# how to create a commit and rollback
+commit;
+
+rollback;
+
+# how to use sql MIN,MAX,count,Avg and SUM
+select min(distinct emp_id)
+from myproject.employees
+where first_name ='Ousmane';
+
+select max(emp_id)
+from myproject.employees
+where last_name = 'Bassoum';
+
+select sum(emp_id)
+from myproject.employees
+where email_address ='ousmanebasslight1@gmail.com';
+
